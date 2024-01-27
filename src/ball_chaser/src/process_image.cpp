@@ -33,7 +33,7 @@ void process_image_callback(const sensor_msgs::Image img)
             int red = img.data[index + 0];
             int green = img.data[index + 1];
             int blue = img.data[index + 2];
-                        
+            
             if (red == white_pixel && green == white_pixel && blue == white_pixel) {
                 // the white ball was found, determine the ball's location and drive to towards it
                 
@@ -43,7 +43,7 @@ void process_image_callback(const sensor_msgs::Image img)
                     // the white ball is on the left
                     
                     ROS_INFO_STREAM("Turning left");
-                    drive_robot(speed, turn_angle);
+                    drive_robot(speed, -turn_angle);
                 } else if (col < (segment_size * 2)) {
                     // the white ball is in the middle
                     
@@ -53,7 +53,7 @@ void process_image_callback(const sensor_msgs::Image img)
                     // the white ball is on the right
                     
                     ROS_INFO_STREAM("Turning right");
-                    drive_robot(speed, -turn_angle);
+                    drive_robot(speed, turn_angle);
                 }
                 
                 return;
