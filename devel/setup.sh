@@ -8,7 +8,7 @@
 
 # since this file is sourced either use the provided _CATKIN_SETUP_DIR
 # or fall back to the destination set at configure time
-: ${_CATKIN_SETUP_DIR:=/home/robond/Desktop/project2/devel}
+: ${_CATKIN_SETUP_DIR:=/home/robond/Documents/udacity-robitics_software_engineer-go_chase_it/devel}
 _SETUP_UTIL="$_CATKIN_SETUP_DIR/_setup_util.py"
 unset _CATKIN_SETUP_DIR
 
