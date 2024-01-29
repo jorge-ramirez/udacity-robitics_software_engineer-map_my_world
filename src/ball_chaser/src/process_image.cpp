@@ -24,7 +24,7 @@ void process_image_callback(const sensor_msgs::Image img)
 {
     int white_pixel = 255;
     int segment_size = img.step / 3; // divide the image into 3 segments: left, middle and right
-    float speed = 0.1;
+    float speed = 10.0;
     float turn_angle = 0.1;
 
     for (int row = 0; row < img.height; row++) {
