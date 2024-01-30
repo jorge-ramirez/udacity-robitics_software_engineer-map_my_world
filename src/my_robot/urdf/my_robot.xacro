@@ -65,7 +65,7 @@
     <collision name='back_caster_collision'>
       <origin xyz="-0.15 0 -${caster_radius}" rpy=" 0 0 0"/>
       <geometry>
-        <sphere radius="${caster_radius}"/>
+        <sphere radius="${caster_radius - 0.001}"/>
       </geometry>
     </collision>
 
@@ -80,7 +80,7 @@
     <collision name='front_caster_collision'>
       <origin xyz="0.15 0 -${caster_radius}" rpy=" 0 0 0"/>
       <geometry>
-        <sphere radius="${caster_radius}"/>
+        <sphere radius="${caster_radius - 0.001}"/>
       </geometry>
     </collision>
 
@@ -124,7 +124,7 @@
   </link>
 
   <joint type="continuous" name="left_wheel_hinge">
-    <origin xyz="0 -0.15 0" rpy="0 0 0"/>
+    <origin xyz="0 -${wheel_radius} 0" rpy="0 0 0"/>
     <child link="left_wheel"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
@@ -162,7 +162,7 @@
   </link>
 
   <joint type="continuous" name="right_wheel_hinge">
-    <origin xyz="0 0.15 0" rpy="0 0 0"/>
+    <origin xyz="0 ${wheel_radius} 0" rpy="0 0 0"/>
     <child link="right_wheel"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
@@ -191,12 +191,13 @@
       <geometry>
         <box size="${camera_length} ${camera_width} ${camera_height}"/>
       </geometry>
+      <material name="red" />
     </visual>
   </link>
 
   <joint type="fixed" name="camera_joint">
     <axis xyz="0 1 0" rpy="0 0 0"/>
-    <origin xyz="${chassis_length / 2} 0 0" rpy="0 0 0"/>
+    <origin xyz="0.275 0 0" rpy="0 0 0"/>
     <parent link="chassis"/>
     <child link="camera"/>
   </joint>
@@ -227,7 +228,7 @@
 
   <joint type="fixed" name="hokuyo_joint">
     <axis xyz="0 1 0" rpy="0 0 0"/>
-    <origin xyz="0.15 0 0.1" rpy="0 0 0"/>
+    <origin xyz="0.2 0 0.1" rpy="0 0 0"/>
     <parent link="chassis"/>
     <child link="hokuyo"/>
   </joint>

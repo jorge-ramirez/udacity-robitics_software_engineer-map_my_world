@@ -24,8 +24,8 @@ void process_image_callback(const sensor_msgs::Image img)
 {
     int white_pixel = 255;
     int segment_size = img.step / 3; // divide the image into 3 segments: left, middle and right
-    float speed = 10.0;
-    float turn_angle = 0.1;
+    float speed = 0.25;
+    float turn_angle = 0.15;
 
     for (int row = 0; row < img.height; row++) {
         for (int col = 0; col < img.step - 3; col += 3) {
@@ -37,7 +37,7 @@ void process_image_callback(const sensor_msgs::Image img)
             if (red == white_pixel && green == white_pixel && blue == white_pixel) {
                 // the white ball was found, determine the ball's location and drive to towards it
                 
-                ROS_INFO_STREAM("image data at coordinate (" + std::to_string(row) + ", " + std::to_string(col) + "), index (" + std::to_string(index) + ") =  RGB(" + std::to_string(red) + ", " + std::to_string(green) + ", " + std::to_string(blue) + ")");
+                //ROS_INFO_STREAM("image data at coordinate (" + std::to_string(row) + ", " + std::to_string(col) + "), index (" + std::to_string(index) + ") =  RGB(" + std::to_string(red) + ", " + std::to_string(green) + ", " + std::to_string(blue) + ")");
                 
                 if (col < segment_size) {
                     // the white ball is on the left
