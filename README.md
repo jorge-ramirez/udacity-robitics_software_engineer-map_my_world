@@ -34,13 +34,10 @@ Drive the robot around using teleop and observe the map overlay in rviz adjust t
 ### Images
 
 Gazebo
-![gazebo start](misc/gazevo-start.png)
+![gazebo start](assets/gazevo-start.png)
 
 RViz Un-Localized
 ![rviz start](assets/rviz-localized.png)
 
 RViz Localized
-![rviz start](assets/rviz-un-localized.png)
-
-Video
-![localization video](assets/video.mp4)
+![rviz start](assets/rviz-unlocalized.png)
