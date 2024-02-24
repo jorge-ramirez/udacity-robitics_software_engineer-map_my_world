@@ -37,7 +37,7 @@ Gazebo
 ![gazebo start](assets/gazevo-start.png)
 
 RViz Un-Localized
-![rviz start](assets/rviz-localized.png)
+![rviz start](assets/rviz-unlocalized.png)
 
 RViz Localized
-![rviz start](assets/rviz-unlocalized.png)
+![rviz start](assets/rviz-localized.png)
