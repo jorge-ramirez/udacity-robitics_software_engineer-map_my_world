@@ -1,43 +1,30 @@
-## Running
+# Map My World
 
 ### Build
 
 ```bash
-$ cd catkin_ws
 $ catkin_make
 $ source develop/setup.bash
 ```
 
-### Launch Gazebo and RViz
+### Launch Gazebo and RViz with Robot
 
 ```bash
 $ roslaunch my_robot world.launch
 ```
 
-### Launch AMCL
+### Launch RTAB
 
 ```bash
-$ roslaunch my_robot amcl.launch
+$ roslaunch my_robot mapping.launch
 ```
 
 ### Launch Teleop
 
 ```bash
-$ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+$ rosrun teleop_twist_keyboard teleop_twist_keyboard
 ```
 
-### Test
+### Map database
+After driving the robot around the environment twice, the rtab database was created.  It can be downloaded at https://drive.google.com/drive/folders/1NpjdGH9Ii9YlLezm7eTVJUmgCUT0TEir?usp=drive_link
 
-Drive the robot around using teleop and observe the map overlay in rviz adjust to match the actual surroundings.
-
-
-### Images
-
-Gazebo
-![gazebo start](assets/gazevo-start.png)
-
-RViz Un-Localized
-![rviz start](assets/rviz-unlocalized.png)
-
-RViz Localized
-![rviz start](assets/rviz-localized.png)
